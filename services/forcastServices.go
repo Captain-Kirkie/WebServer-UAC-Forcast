@@ -65,7 +65,7 @@ type Advisory struct {
     OverallDangerRose        string `json:"overall_danger_rose"`
     OverallDangerRoseImage   string `json:"overall_danger_rose_image"`
     OverallDangerRating      string `json:"overall_danger_rating"`
-    Region                   string `json:"region"`
+    Region                   string `json:"region"` 
 }
 
 type AdvisoryWrapper struct {
@@ -97,12 +97,8 @@ func FetchUACForcast(c *gin.Context) {
 	}
 	resBody, err := io.ReadAll(res.Body)
 	print(resBody)
-	// bodyDecoded, err := base64.StdEncoding.DecodeString(string(resBody)) // response body is []byte
 
-	//https://dev.to/billylkc/parse-json-api-response-in-go-10ng
-	// bytes, _ := io.ReadAll(res.Body)
-	
-		// Deserialization
+	// Deserialization
 	var apiResponse Advisories
 
 	err = json.Unmarshal(resBody, &apiResponse)
