@@ -17,7 +17,7 @@ func TestParseResponse(t *testing.T) {
     assert := assert.New(t)
 	
 	
-	data, err := os.ReadFile("./test_response.json")
+	data, err := os.ReadFile("./Resources/test_response.json")
 	t.Log(len(data))
 	
 	assert.Nil(err)
